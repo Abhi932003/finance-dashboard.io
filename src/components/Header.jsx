@@ -9,6 +9,7 @@ import './Header.css';
 const Header = () => {
     const { role, setRole, setSidebarOpen, loading, theme, toggleTheme, setActivePage } = useDashboard();
     const { unreadCount } = useNotification();
+    const baseUrl = import.meta.env.BASE_URL;
 
     const [showNotifications, setShowNotifications] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -92,7 +93,7 @@ const Header = () => {
 
                 <div className="user-profile" onClick={() => { setActivePage('Profile'); setShowNotifications(false); setShowSettings(false); }} style={{ cursor: 'pointer' }}>
                     <div className="user-avatar">
-                        <img src="/IMG-20260327-WA0017.jpg.jpeg" alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src={`${baseUrl}IMG-20260327-WA0017.jpg.jpeg`} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <div className="user-info">
                         <span className="user-name">Abhishek Watmode</span>

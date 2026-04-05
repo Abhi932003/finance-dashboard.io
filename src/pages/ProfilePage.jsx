@@ -16,6 +16,7 @@ import { useNotification } from '../context/NotificationContext';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
+    const baseUrl = import.meta.env.BASE_URL;
     const { role } = useDashboard();
     const { showToast } = useNotification();
 
@@ -43,7 +44,7 @@ const ProfilePage = () => {
                 <div className="profile-avatar-wrapper">
                     <div className="profile-avatar-big">
                         <img 
-                            src="/IMG-20260327-WA0017.jpg.jpeg" 
+                            src={`${baseUrl}IMG-20260327-WA0017.jpg.jpeg`} 
                             alt="Profile" 
                             style={{ 
                                 width: '100%', 
