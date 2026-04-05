@@ -1,5 +1,5 @@
 {
-  "homepage": "https://abhi932003.github.io/dashboard-finance",
+  "homepage": "https://abhi932003.github.io/finance-dashboard.io",
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
@@ -20,7 +20,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   
   "eslintConfig": {
