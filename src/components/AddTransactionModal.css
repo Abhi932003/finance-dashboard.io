@@ -1,0 +1,186 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 500px;
+    background: var(--bg-card);
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 40px 60px rgba(0,0,0,0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+.modal-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.modal-form {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-size: 15px;
+    transition: all var(--transition-fast);
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--accent-blue);
+    background-color: var(--bg-card);
+    outline: none;
+    box-shadow: 0 0 0 4px var(--accent-blue-soft);
+}
+
+.form-group input.error {
+    border-color: var(--status-red);
+}
+
+.error-text {
+    color: var(--status-red);
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.segmented-control {
+    display: flex;
+    height: 48px;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.segmented-control button {
+    flex: 1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+}
+
+.segmented-control button.active.income {
+    background: var(--status-green);
+    color: white;
+}
+
+.segmented-control button.active.expense {
+    background: var(--status-red);
+    color: white;
+}
+
+.modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-top: 12px;
+}
+
+.btn-cancel {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+}
+
+.btn-cancel:hover {
+    background: var(--bg-primary);
+    color: var(--text-main);
+}
+
+.btn-save {
+    padding: 12px 24px;
+    border-radius: 12px;
+    background: var(--accent-navy);
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all var(--transition-fast);
+}
+
+.btn-save:hover {
+    background: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--status-red);
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        border-radius: 16px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

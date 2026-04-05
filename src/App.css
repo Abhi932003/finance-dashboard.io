@@ -1,0 +1,90 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex-grow: 1;
+  margin-left: var(--sidebar-width);
+  background-color: var(--bg-primary);
+  transition: background-color var(--transition-fast);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Common Components Style */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.card-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.card-trend {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.trend-up {
+  color: var(--status-green);
+}
+
+.trend-down {
+  color: var(--status-red);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+}

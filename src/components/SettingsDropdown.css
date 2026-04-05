@@ -1,0 +1,183 @@
+.settings-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+[data-theme='dark'] .settings-dropdown {
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+}
+
+.profile-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-blue), #6366f1);
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.profile-email {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.profile-role-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--accent-blue-soft);
+    color: var(--accent-blue);
+    padding: 2px 8px;
+    border-radius: 99px;
+    letter-spacing: 0.5px;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 8px 0;
+}
+
+.dropdown-section {
+    padding: 8px 0;
+}
+
+.section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    padding: 8px 12px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+    gap: 12px;
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    background: var(--bg-primary);
+}
+
+.menu-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.menu-item:hover .menu-icon {
+    color: var(--accent-blue);
+}
+
+.menu-value {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.chevron {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+/* Custom Toggle Switch */
+.toggle-track {
+    width: 36px;
+    height: 20px;
+    background-color: #cbd5e1;
+    border-radius: 99px;
+    position: relative;
+    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: auto;
+}
+
+.toggle-track.active {
+    background-color: var(--accent-blue);
+}
+
+.toggle-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-track.active .toggle-thumb {
+    transform: translateX(16px);
+}
+
+.dropdown-footer {
+    padding: 4px 0;
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    color: var(--status-red);
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.08);
+}
